@@ -2,7 +2,7 @@
 @Author: joker.zhang
 @Date: 2019-06-28 13:59:05
 @LastEditors: joker.zhang
-@LastEditTime: 2019-07-04 15:09:23
+@LastEditTime: 2019-07-09 16:41:21
 @Description: For Automation
 '''
 from django.db import models
@@ -15,6 +15,7 @@ class Event(models.Model):
     address = models.CharField(max_length=200)
     start_time = models.DateTimeField('events time')
     create_time = models.DateTimeField(auto_now=True)
+    events = models.Manager()
 
     def __str__(self):
         return self.name
@@ -26,6 +27,7 @@ class Guest(models.Model):
     email = models.EmailField()
     sign = models.BooleanField()
     create_time = models.DateTimeField(auto_now=True)
+    guests = models.Manager()
 
     class Meta:
         unique_together = ('event','phone')

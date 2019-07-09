@@ -2,7 +2,7 @@
 @Author: joker.zhang
 @Date: 2019-06-28 11:56:26
 @LastEditors: joker.zhang
-@LastEditTime: 2019-07-04 11:05:53
+@LastEditTime: 2019-07-09 17:56:21
 @Description: For Automation
 '''
 """guest URL Configuration
@@ -27,6 +27,9 @@ from sign import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', views.index),
+    path('logout/', views.logout),
     path('login_action/', views.login_action),
     path('event_manage/', views.event_manage),
+    path('guest_manage/', views.guest_manage),
+    path('search_name/', views.guest_manage),
 ]

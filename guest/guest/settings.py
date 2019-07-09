@@ -2,7 +2,7 @@
 @Author: joker.zhang
 @Date: 2019-06-28 11:56:26
 @LastEditors: joker.zhang
-@LastEditTime: 2019-06-28 14:36:46
+@LastEditTime: 2019-07-09 10:55:30
 @Description: For Automation
 '''
 """
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sign',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
