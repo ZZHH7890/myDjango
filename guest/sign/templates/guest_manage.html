@@ -2,7 +2,7 @@
  * @Author: joker.zhang
  * @Date: 2019-07-03 10:31:14
  * @LastEditors: joker.zhang
- * @LastEditTime: 2019-07-09 17:16:36
+ * @LastEditTime: 2019-07-10 11:37:35
  * @Description: For Automation
  -->
 
@@ -30,29 +30,44 @@
                     <li><a href="#">{{user}}</a></li>
                     <li><a href="/logout/">退出</a></li>
                 </ul>
-
             </div>
         </div>
     </nav>
+
+    <div class="page-header">
+        <div id="navbar" class="navbar-collapse collapse">
+            <form class="navbar-form" method="GET" action="/search_guest/">
+                <div class="form-group">
+                    <input name="realname" type="text" placeholder="姓名" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success">搜索</button>
+            </form>
+        </div>
+    </div>
+
     <!--发布会列表-->
     <div class="row">
         <div class="col-md-6">
             <table class="table table-striped">
                 <thead>
                     <tr class="danger">
+                        <th>ID</th>
                         <th>姓名</th>
                         <th>手机号码</th>
                         <th>邮件</th>
                         <th>签到状态</th>
+                        <th>发布会</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for guest in guests %}
                     <tr>
+                        <td>{{guest.id}}</td>
                         <td>{{guest.realname}}</td>
                         <td>{{guest.phone}}</td>
                         <td>{{guest.email}}</td>
                         <td>{{guest.sign}}</td>
+                        <td>{{guest.event}}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

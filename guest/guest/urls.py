@@ -2,7 +2,7 @@
 @Author: joker.zhang
 @Date: 2019-06-28 11:56:26
 @LastEditors: joker.zhang
-@LastEditTime: 2019-07-09 17:56:21
+@LastEditTime: 2019-07-10 11:14:04
 @Description: For Automation
 '''
 """guest URL Configuration
@@ -31,5 +31,6 @@ urlpatterns = [
     path('login_action/', views.login_action),
     path('event_manage/', views.event_manage),
     path('guest_manage/', views.guest_manage),
-    path('search_name/', views.guest_manage),
+    path('search_name/', views.search_name),
+    path('search_guest/', views.search_guest),
 ]

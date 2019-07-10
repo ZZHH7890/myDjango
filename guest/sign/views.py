@@ -2,7 +2,7 @@
 @Author: joker.zhang
 @Date: 2019-06-28 13:59:05
 @LastEditors: joker.zhang
-@LastEditTime: 2019-07-09 16:51:33
+@LastEditTime: 2019-07-10 11:37:26
 @Description: For Automation
 '''
 from django.shortcuts import render
@@ -51,4 +51,19 @@ def event_manage(request):
 def guest_manage(request):
     guest_list =  Guest.guests.all()
     username = request.session.get('user','')
+    return render(request,'guest_manage.html',{'user':username,'guests':guest_list})
+
+@login_required
+def search_name(request):
+    username = request.session.get('user','')
+    search_name = request.GET.get("name","")
+    #search_name_bytes = search_name.encode(encoding='utf-8')
+    event_list = Event.events.filter(name__contains=search_name)
+    return render(request,'event_manage.html',{'user':username,'events':event_list})
+
+@login_required
+def search_guest(request):
+    username = request.session.get('user','')
+    search_guest = request.GET.get("realname","")
+    guest_list = Guest.guests.filter(realname__contains=search_guest)
     return render(request,'guest_manage.html',{'user':username,'guests':guest_list})
